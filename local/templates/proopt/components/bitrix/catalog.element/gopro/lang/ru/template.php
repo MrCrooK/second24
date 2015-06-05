@@ -57,7 +57,7 @@ $MESS['RSGOPRO.DETAIL_CHEAPER_TITLE'] = 'Форма Хотите дешевле'
 
 // component_epilog
 $MESS['TABS_DETAIL_TEXT'] = 'Описание';
-$MESS['TABS_PROPERTIES'] = 'Характеристики';
+$MESS['TABS_PROPERTIES'] = 'Дополнительное описание';
 $MESS['TABS_SET'] = 'Набор';
 $MESS['TABS_REVIEW'] = 'Отзывы';
 

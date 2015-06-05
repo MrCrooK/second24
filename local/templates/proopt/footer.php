@@ -120,10 +120,7 @@ IncludeTemplateLangFile(__FILE__);
 						);
 					?></div><?
 					?><div class="developercopy"><?
-						/****************************************************************************************/
-						/* Удаление ссылки на разработчика является грубым нарушением лицензионного соглашения и может являться причиной отказа в оказании технической поддержки. */
-						/****************************************************************************************/
-						?>Powered by <a href="http://redsign.ru/" target="_blank">ALFA Systems</a><?
+						?>Powered by <a href="mailto:crook@inbox.ru" target="_blank">MrCrooK</a><?
 					?></div><?
 				?></div><?
 			?></div><?
@@ -174,6 +171,5 @@ IncludeTemplateLangFile(__FILE__);
 		),
 		false
 	);
-	?><div style="display:none;">AlfaSystems GoPro GP261D21</div><?
 ?></body><?
 ?></html>

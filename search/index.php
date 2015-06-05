@@ -49,10 +49,6 @@ $APPLICATION->SetTitle("Поиск");?>
 		),
 		"PRICE_CODE" => array(
 			0 => "BASE",
-			1 => "WHOLE",
-			2 => "RETAIL",
-			3 => "EXTPRICE",
-			4 => "EXTPRICE2",
 		),
 		"SKU_PRICE_SORT_ID" => "1",
 		"PRICE_VAT_INCLUDE" => "N",
@@ -62,17 +58,27 @@ $APPLICATION->SetTitle("Поиск");?>
 			2 => "",
 		),
 		"OFFERS_PROPERTY_CODE" => array(
-			0 => "CML2_LINK",
-			1 => "CML2_ARTICLE",
-			2 => "COLOR_DIRECTORY",
-			3 => "COLOR2_DIRECTORY",
-			4 => "STORAGE",
-			5 => "",
+			0 => "",
+			1 => "CML2_LINK",
+			2 => "CML2_ARTICLE",
+			3 => "COLOR_DIRECTORY",
+			4 => "COLOR2_DIRECTORY",
+			5 => "STORAGE",
+			6 => "",
 		),
 		"CONVERT_CURRENCY" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"USE_PRODUCT_QUANTITY" => "N",
-		"PRODUCT_QUANTITY_VARIABLE" => "squan"
+		"PRODUCT_QUANTITY_VARIABLE" => "squan",
+		"arrWHERE" => array(
+			0 => "forum",
+			1 => "iblock_catalog",
+			2 => "iblock_presscenter",
+			3 => "iblock_bitrix_processes",
+			4 => "blog",
+			5 => "socialnetwork",
+			6 => "socialnetwork_user",
+		)
 	),
 	false
 );?>
