@@ -102,50 +102,58 @@ $APPLICATION->SetPageProperty("title", "Главная");
 
 <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "main", array(
 	"IBLOCK_TYPE" => "catalog",
-	"IBLOCK_ID" => "10",
-	"SECTION_ID" => "",
-	"SECTION_CODE" => "",
-	"COUNT_ELEMENTS" => "Y",
-	"TOP_DEPTH" => "2",
-	"SECTION_FIELDS" => array(
-		0 => "",
-		1 => "",
+		"IBLOCK_ID" => "10",
+		"SECTION_ID" => "",
+		"SECTION_CODE" => "",
+		"COUNT_ELEMENTS" => "Y",
+		"TOP_DEPTH" => "2",
+		"SECTION_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SECTION_URL" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_GROUPS" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"SHOW_COUNT_LVL1" => "8",
+		"SHOW_COUNT_LVL2" => "11"
 	),
-	"SECTION_USER_FIELDS" => array(
-		0 => "",
-		1 => "",
-	),
-	"SECTION_URL" => "",
-	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "36000000",
-	"CACHE_GROUPS" => "Y",
-	"ADD_SECTIONS_CHAIN" => "N",
-	"SHOW_COUNT_LVL1" => "8",
-	"SHOW_COUNT_LVL2" => "11"
-	),
-	false
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "N"
+	)
 );?>
 
-<?$APPLICATION->IncludeComponent("bitrix:news.line", "main", array(
-	"IBLOCK_TYPE" => "presscenter",
-	"IBLOCKS" => array(
-		0 => "5",
-		1 => "4",
-	),
-	"NEWS_COUNT" => "4",
-	"FIELD_CODE" => array(
-		0 => "PREVIEW_PICTURE",
-		1 => "IBLOCK_NAME",
-	),
-	"SORT_BY1" => "ACTIVE_FROM",
-	"SORT_ORDER1" => "DESC",
-	"SORT_BY2" => "SORT",
-	"SORT_ORDER2" => "ASC",
-	"DETAIL_URL" => "",
-	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "300",
-	"CACHE_GROUPS" => "N",
-	"ACTIVE_DATE_FORMAT" => "d.m.Y"
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	"main", 
+	array(
+		"IBLOCK_TYPE" => "presscenter",
+		"IBLOCKS" => array(
+			0 => "13",
+			1 => "14",
+		),
+		"NEWS_COUNT" => "4",
+		"FIELD_CODE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "IBLOCK_NAME",
+			2 => "",
+		),
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"DETAIL_URL" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "300",
+		"CACHE_GROUPS" => "N",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"BLOCK_NAME" => ""
 	),
 	false
 );
@@ -195,7 +203,7 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_main')
 ?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section", 
-	'gopro', 
+	"gopro", 
 	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "10",
@@ -213,30 +221,30 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_main')
 		"INCLUDE_SUBSECTIONS" => "A",
 		"SHOW_ALL_WO_SECTION" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
-		"PAGE_ELEMENT_COUNT" => "5",
+		"PAGE_ELEMENT_COUNT" => "15",
 		"LINE_ELEMENT_COUNT" => "3",
 		"PROPERTY_CODE" => array(
 			0 => "CML2_ARTICLE",
-			1 => "BRAND",
-			2 => "YEAR",
-			3 => "OS",
-			4 => "WEIGHT",
-			5 => "FORUM_MESSAGE_CNT",
-			6 => "RSFAVORITE_COUNTER",
-			7 => "FORUM_TOPIC_ID",
-			8 => "HEIGHT",
-			9 => "TICKNESS",
-			10 => "WIDTH",
-			11 => "DIAGONAL",
-			12 => "SOLUTION",
-			13 => "INTERNET_ACCESS",
-			14 => "INTERFACES",
-			15 => "NAVI",
-			16 => "CARD",
-			17 => "VIDEO",
-			18 => "ACCESSORIES",
-			19 => "POHOZHIE",
-			20 => "BUY_WITH_THIS",
+			1 => "WEIGHT",
+			2 => "FORUM_MESSAGE_CNT",
+			3 => "RSFAVORITE_COUNTER",
+			4 => "FORUM_TOPIC_ID",
+			5 => "VIDEO",
+			6 => "POHOZHIE",
+			7 => "BUY_WITH_THIS",
+			8 => "BRAND",
+			9 => "YEAR",
+			10 => "OS",
+			11 => "HEIGHT",
+			12 => "TICKNESS",
+			13 => "WIDTH",
+			14 => "DIAGONAL",
+			15 => "SOLUTION",
+			16 => "INTERNET_ACCESS",
+			17 => "INTERFACES",
+			18 => "NAVI",
+			19 => "CARD",
+			20 => "ACCESSORIES",
 			21 => "YEARS",
 			22 => "",
 		),
@@ -272,10 +280,6 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_main')
 		"CACHE_FILTER" => "N",
 		"PRICE_CODE" => array(
 			0 => "BASE",
-			1 => "WHOLE",
-			2 => "RETAIL",
-			3 => "EXTPRICE",
-			4 => "EXTPRICE2",
 		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
@@ -342,7 +346,7 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_main')
 		"OFFERS_SORT_ORDER2" => "asc",
 		"PROP_MORE_PHOTO" => "MORE_PHOTO",
 		"PROP_ARTICLE" => "CML2_ARTICLE",
-		"PROP_ACCESSORIES" => "ACCESSORIES",
+		"PROP_ACCESSORIES" => "-",
 		"USE_FAVORITE" => "Y",
 		"USE_SHARE" => "Y",
 		"SHOW_ERROR_EMPTY_ITEMS" => "Y",
@@ -371,7 +375,12 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_main')
 		"PROPS_ATTRIBUTES_COLOR" => array(
 			0 => "COLOR_DIRECTORY",
 			1 => "COLOR2_DIRECTORY",
-		)
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"EMPTY_ITEMS_HIDE_FIL_SORT" => "Y",
+		"OFF_MEASURE_RATION" => "N",
+		"OFF_SMALLPOPUP" => "N",
+		"COMPARE_PATH" => ""
 	),
 	false
 );?>

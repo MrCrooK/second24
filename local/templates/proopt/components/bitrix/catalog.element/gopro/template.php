@@ -376,7 +376,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 									endif;?>" data-value="<?=htmlspecialcharsbx($arValue['VALUE'])?>"><?
 									if($isColor)
 									{
-										?><span style="background-image:url('<?=$arValue['PICT']['SRC']?>');" title="<?=$arValue['VALUE']?>"></span> &nbsp; <?=$arValue['VALUE']?><?
+										?><span style="background-image:url('<?=$arValue['PICT']['SRC']?>');" title="<?=$arValue['VALUE']?>"></span>   <?=$arValue['VALUE']?><?
 									} else {
 										?><span><?=$arValue['VALUE']?></span><?
 									}
@@ -411,7 +411,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 				?><input type="hidden" name="<?=$arParams['PRODUCT_ID_VARIABLE']?>" class="js-add2basketpid" value="<?=$PRODUCT['ID']?>"><?
 				if($arParams['USE_PRODUCT_QUANTITY'])
 				{
-					?><span class="quantitytitle"><?=GetMessage('CT_BCE_QUANTITY')?>&nbsp; &nbsp;</span><?
+					?><span class="quantitytitle"><?=GetMessage('CT_BCE_QUANTITY')?>   </span><?
 					?><span class="quantity"><?
 						?><a class="minus js-minus">-</a><?
 						?><input type="text" class="js-quantity" name="<?=$arParams['PRODUCT_QUANTITY_VARIABLE']?>" value="<?=$PRODUCT['CATALOG_MEASURE_RATIO']?>" data-ratio="<?=$PRODUCT['CATALOG_MEASURE_RATIO']?>"><?
@@ -500,7 +500,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 				?><?=$arResult['PREVIEW_TEXT']?><?
 				if( $arResult['TABS']['DETAIL_TEXT'] )
 				{
-					?>&nbsp;<a class="go2detailfrompreview" href="#detailtext"><?=GetMessage('GO2DETAILFROMPREVIEW')?></a><?
+					?> <a class="go2detailfrompreview" href="#detailtext"><?=GetMessage('GO2DETAILFROMPREVIEW')?></a><?
 				}
 			?></div><?
 		}

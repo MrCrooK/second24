@@ -438,7 +438,8 @@
 	background-color:#FFF;
 }
 .elementdetail .soloprice .price.gen{
-	font-size:18px;
+	font-size:22px;
+	color: #ee8131;
 }
 /* /prices -> solo */
 /* properties */

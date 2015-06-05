@@ -47,14 +47,15 @@ $APPLICATION->SetTitle("Оформление заказа");
 		"SHOW_PAYMENT_SERVICES_NAMES" => "Y",
 		"SHOW_STORES_IMAGES" => "N",
 		"PATH_TO_BASKET" => "/personal/cart/",
-		"PATH_TO_PERSONAL" => "/personal/",
+		"PATH_TO_PERSONAL" => "/personal/order/",
 		"PATH_TO_PAYMENT" => "/personal/order/payment/",
 		"PATH_TO_AUTH" => "/auth/",
 		"SET_TITLE" => "Y",
 		"DISABLE_BASKET_REDIRECT" => "N",
 		"PRODUCT_COLUMNS" => array(
 		),
-		"PROP_2" => array(
+		"PROP_2" => "",
+		"CODE_PHONES" => array(
 		)
 	),
 	false

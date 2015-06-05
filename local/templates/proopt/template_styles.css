@@ -592,9 +592,13 @@ input.btn3[type="reset"]:active{
 }
 .footer .line2 .sitecopy{
 	float:left;
+	line-height: 31px;
+	height: 31px;
 }
 .footer .line2 .developercopy{
 	float:right;
+	line-height: 31px;
+	height: 31px;
 }
 /* /footer -> line2 */
 /* /footer */

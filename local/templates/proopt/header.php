@@ -112,7 +112,8 @@ $prop_option = COption::GetOptionString('redsign.proopt', 'prop_option', 'line_t
 		"RSGOPRO_JS_COMPARE":"<?=CUtil::JSEscape(GetMessage('RSGOPRO.RSGOPRO_JS_COMPARE'))?>",
 		"RSGOPRO_JS_COMPARE_IN":"<?=CUtil::JSEscape(GetMessage('RSGOPRO.RSGOPRO_JS_COMPARE_IN'))?>"
 	});
-</script><?
+</script>
+<?
 ?></head><?
 ?><body class="prop_option_<?=$prop_option?><?if($adaptive=="Y"):?> adaptive<?endif;?>"><?
 	?><div id="panel"><?=$APPLICATION->ShowPanel()?></div><?
@@ -171,7 +172,7 @@ $prop_option = COption::GetOptionString('redsign.proopt', 'prop_option', 'line_t
 					?></div><?
 					?><div class="phone column1 nowrap"><?
 						?><div class="column1inner"><?
-							?><i class="icon pngicons mobile_hide"></i><?
+							/*?><i class="icon pngicons mobile_hide"></i><?*/
 							$APPLICATION->IncludeFile(
 								SITE_TEMPLATE_PATH."/include_areas/header_phone.php",
 								Array(),

@@ -118,10 +118,10 @@ IncludeTemplateLangFile(__FILE__);
 							Array(),
 							Array("MODE"=>"html")
 						);
-					?></div><?
-					?><div class="developercopy"><?
-						?>Powered by <a href="mailto:crook@inbox.ru" target="_blank">MrCrooK</a><?
-					?></div><?
+					?></div>
+					<div class="developercopy">
+Powered by <a href="mailto:crook@inbox.ru" target="_blank">MrCrooK</a>
+					</div><?
 				?></div><?
 			?></div><?
 		?></div><?

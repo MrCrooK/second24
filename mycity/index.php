@@ -10,10 +10,13 @@ else{
 ?>
 
 <?
-$APPLICATION->IncludeComponent("redsign:autodetect.location", "gopro", array(
-	"RSLOC_INCLUDE_JQUERY" => "N",
-	"RSLOC_LOAD_LOCATIONS" => "Y",
-	"RSLOC_LOAD_LOCATIONS_CNT" => "20"
+$APPLICATION->IncludeComponent(
+	"redsign:autodetect.location", 
+	"gopro", 
+	array(
+		"RSLOC_INCLUDE_JQUERY" => "N",
+		"RSLOC_LOAD_LOCATIONS" => "Y",
+		"RSLOC_LOAD_LOCATIONS_CNT" => "10"
 	),
 	false
 );?>
