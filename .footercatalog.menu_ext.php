@@ -7,7 +7,7 @@ $aMenuLinksExt = array();
 if(CModule::IncludeModule('iblock'))
 {
 	$arFilter = array(
-		"TYPE" => "catalog",
+		"TYPE" => "1c_catalog",
 		"SITE_ID" => SITE_ID,
 	);
 

@@ -1,15 +1,8 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Защита покупателя", 
+		"О нас", 
 		"/about/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Помощь", 
-		"/vendors/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -22,35 +15,14 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Как сделать заказ", 
-		"/docs/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Как оплатить товар", 
-		"/news/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Доставка", 
+		"Акции", 
 		"/action/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Ганатии", 
-		"/delivery/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"О сайте", 
+		"Оплата", 
 		"/payment/", 
 		Array(), 
 		Array(), 

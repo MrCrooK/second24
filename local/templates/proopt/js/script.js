@@ -197,6 +197,7 @@ function RSGoPro_TIMER() {
 
 
 $(document).ready(function(){
+
 	setInterval(function() {
 		RSGoPro_TIMER();
 	}, 1000);

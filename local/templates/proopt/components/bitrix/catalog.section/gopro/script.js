@@ -18,6 +18,25 @@ function RSGoPro_Hider() {
 }
 
 $(document).ready(function(){
+
+$(".fancyboxajaxload")
+.fancybox({
+        fitToView:false,
+        padding: 0,
+        margin: 10,
+        autoSize:false,
+        'width':1240, 
+        'height':parseInt($(window).height()  - 20 ),
+        'autoScale':false,
+        'type': 'ajax',
+        transitionIn: 'none',
+        transitionOut: 'none',
+        tpl: {
+wrap     : '<div class="fancybox-wrap" tabIndex="-1"><div class="fancybox-skin"><div class="fancybox-outer" style="padding:0"><div class="fancybox-inner"></div></div></div></div>',
+closeBtn : '<a title="Close" class="fancybox-item fancybox-closes" href="javascript:;"><i class="iconpngicons"></i></a>',
+}
+}); //.attr('rel', 'gallery')
+	
 	
 	// fix tables if stupid styles didnt work
 	RSGoPro_DetectTable();

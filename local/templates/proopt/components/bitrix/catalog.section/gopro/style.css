@@ -769,3 +769,17 @@
 	}
 }
 /******************************* /showcase *******************************/
+
+.fast-view {
+  display: none!important;
+  position: absolute;
+  top: 70px;
+  background-color: #EE8131;
+  height: 30px!important;
+  line-height: 30px!important;
+  color: #fff;
+  border-radius: 3px;
+}
+.hover .fast-view {
+  display: block!important;
+}

@@ -80,7 +80,9 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 							?></a><?
 						} else {
 							?></span><?
-						}
+						}?>
+						<a href="/catalog/fast-view.php?ID=<?=$arItem['ID']?>" class="fancyboxajaxload  fast-view">Быстрый просмотр</a>
+						<?
 						// TIMERS
 						$arTimers = array();
 						if( $arItem['HAVE_DA2']=='Y' ) {
@@ -192,7 +194,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 							}
 							$pricesHTML.= ' scrollitem">';
 							$pricesHTML.= '<td class="nowrap">'.$arResPrice['TITLE'].'</td>';
-							$pricesHTML.= '<td class="nowrap"><span class="price price_pdv_'.$PRICE_CODE.'">'.(isset($arPrice["PRINT_DISCOUNT_VALUE"]) ? $arPrice["PRINT_DISCOUNT_VALUE"] : '&mdash;' ).'</span></td>';
+							$pricesHTML.= '<td class="nowrap"><span class="price price_pdv_'.$PRICE_CODE.'">'.(isset($arPrice["PRINT_DISCOUNT_VALUE"]) ? $arPrice["PRINT_DISCOUNT_VALUE"] : '—' ).'</span></td>';
 							$pricesHTML.= '</tr>';
 							$cnt++;
 						}
@@ -251,7 +253,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 													endif;?>" data-value="<?=htmlspecialcharsbx($arValue['VALUE'])?>"><?
 													if($isColor)
 													{
-														?><span style="background-image:url('<?=$arValue['PICT']['SRC']?>');" title="<?=$arValue['VALUE']?>"></span> &nbsp; <?=$arValue['VALUE']?><?
+														?><span style="background-image:url('<?=$arValue['PICT']['SRC']?>');" title="<?=$arValue['VALUE']?>"></span>   <?=$arValue['VALUE']?><?
 													} else {
 														?><span><?=$arValue['VALUE']?></span><?
 													}

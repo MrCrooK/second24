@@ -84,13 +84,9 @@ IncludeTemplateLangFile(__FILE__);
 					);
 				?></div><?
 				?><div class="block four"><?
-					?><div class="sovservice"><?
-						$APPLICATION->IncludeFile(
-							SITE_TEMPLATE_PATH."/include_areas/footer_socservice.php",
-							Array(),
-							Array("MODE"=>"html")
-						);
-					?></div><?
+					?><div class="sovservice">
+					<script>$( ".sovservice" ).load( "/local/templates/proopt/include_areas/footer_socservice.php" );</script>
+					</div><?
 					?><div class="subscribe"><?
 						$APPLICATION->IncludeComponent(
 							"bitrix:subscribe.form",
@@ -120,7 +116,7 @@ IncludeTemplateLangFile(__FILE__);
 						);
 					?></div>
 					<div class="developercopy">
-Powered by <a href="mailto:crook@inbox.ru" target="_blank">MrCrooK</a>
+					<!--Powered by <a href="mailto:crook@inbox.ru" target="_blank">MrCrooK</a>-->
 					</div><?
 				?></div><?
 			?></div><?

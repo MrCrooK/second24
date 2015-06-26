@@ -1,1 +1,1 @@
-<img src="/bitrix/templates/proopt/img/logo.png" title="OptPro" alt="OptPro" />
+<img alt="Second24.RU" src="/local/templates/proopt/img/logo.jpg" title="OptPro">

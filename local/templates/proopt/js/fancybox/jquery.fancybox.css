@@ -39,7 +39,7 @@
 	padding-top:41px;
 }
 .fancybox-opened .fancybox-outer{
-	padding-top:61px;
+	padding-top:60px;
 }
 
 .fancybox-outer, .fancybox-inner{
@@ -105,12 +105,46 @@
 	cursor:pointer;
 	z-index:8050;
 }
-.fancybox-close .icon{
-	width:10px;
-	height:10px;
-	background-position:0px -91px;
-}	
 
+.fancybox-closes {
+	position:absolute;
+	top:-8px;
+	right:-8px;
+	cursor:pointer;
+	z-index:8050;
+	width:17px;
+	height:17px;
+	background:url('close.png') center center no-repeat;
+}
+.iconpngicons {
+        width: 10px;
+        height: 10px;
+        background-position: 0px -91px;
+}
+/*
+.fancybox-close{
+	position:absolute;
+	top:-8px;
+	right:-8px;
+	cursor:pointer;
+	z-index:8050;
+	width:17px;
+	height:17px;
+	background:url('close.png') center center no-repeat;
+}
+*/
+
+.fancybox-close .icon {
+  width: 10px;
+  height: 10px;
+  background-position: 0px -91px;
+}
+/*
+.fancybox-close .icon {
+	width:17px;
+	height:17px;
+}	
+*/
 .fancybox-nav{
 	position:absolute;
 	top:0;

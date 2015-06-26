@@ -8,7 +8,8 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 	if( isset($arResult['QUICKBUY']) || isset($PRODUCT['QUICKBUY']) ) { echo ' qb'; }
 	?> propvision1 clearfix" data-elementid="<?=$arResult['ID']?>" <?
 	?> data-elementname="<?=CUtil::JSEscape($arResult['NAME'])?>"<?
-	?>><i class="icon da2qb"></i><?
+	?>>
+	<i class="icon da2qb"></i><?
 	// PICTURES
 	?><div class="pictures changegenimage"><?
 		?><div class="pic"><?
@@ -226,7 +227,9 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 		}
 	?></div><?
 	// INFO
-	?><div class="info"><?
+	?><div class="info">
+		<?if($_REQUEST['QUICK']=="Y") echo "<h1>".$arResult['NAME']."</h1>";?>
+		<?
 		// ARTICLE && STORES
 		?><div class="articleandstores clearfix"><?
 			// ARTICLE
@@ -241,34 +244,6 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 				?></div><?
 			} else {
 				?><div class="article" style="display:none;"><?=GetMessage('ARTICLE')?>: <span class="offer_article"></span></div><?
-			}
-			// STORES
-			if($arParams['USE_STORE']=='Y') {
-				?><?$APPLICATION->IncludeComponent(
-					'bitrix:catalog.store.amount',
-					( $arParams['STORES_TEMPLATE']!='' ? $arParams['STORES_TEMPLATE'] : 'gopro' ),
-					array(
-						"ELEMENT_ID" => $arResult["ID"],
-						"STORE_PATH" => $arParams["STORE_PATH"],
-						"CACHE_TYPE" => "A",
-						"CACHE_TIME" => "36000",
-						"MAIN_TITLE" => $arParams["MAIN_TITLE"],
-						"USE_STORE_PHONE" => $arParams["USE_STORE_PHONE"],
-						"SCHEDULE" => $arParams["USE_STORE_SCHEDULE"],
-						"USE_MIN_AMOUNT" => "N",
-						"GOPRO_USE_MIN_AMOUNT" => $arParams["USE_MIN_AMOUNT"],
-						"MIN_AMOUNT" => $arParams["MIN_AMOUNT"],
-						"SHOW_EMPTY_STORE" => $arParams['SHOW_EMPTY_STORE'],
-						"SHOW_GENERAL_STORE_INFORMATION" => $arParams['SHOW_GENERAL_STORE_INFORMATION'],
-						"USER_FIELDS" => $arParams['USER_FIELDS'],
-						"FIELDS" => $arParams['FIELDS'],
-						// gopro
-						'DATA_QUANTITY' => $arResult['DATA_QUANTITY'],
-						'FIRST_ELEMENT_ID' => $PRODUCT['ID'],
-					),
-					$component,
-					array('HIDE_ICONS'=>'Y')
-				);?><?
 			}
 		?></div><?
 		// PRICES
@@ -408,7 +383,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 		?><noindex><div class="buy clearfix"><?
 			?><form class="add2basketform js-buyform<?=$arResult['ID']?> js-synchro<?if(!$PRODUCT['CAN_BUY']):?> cantbuy<?endif;?> clearfix" name="add2basketform"><?
 				?><input type="hidden" name="<?=$arParams['ACTION_VARIABLE']?>" value="ADD2BASKET"><?
-				?><input type="hidden" name="<?=$arParams['PRODUCT_ID_VARIABLE']?>" class="js-add2basketpid" value="<?=$PRODUCT['ID']?>"><?
+				?><input type="hidden" name="<?=$arParams['PRODUCT_ID_VARIABLE']?>" class="js-add2basketpid" value="<?=$PRODUCT['ID']?>"><?/*
 				if($arParams['USE_PRODUCT_QUANTITY'])
 				{
 					?><span class="quantitytitle"><?=GetMessage('CT_BCE_QUANTITY')?>   </span><?
@@ -420,7 +395,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 						}
 						?><a class="plus js-plus">+</a><?
 					?></span><?
-				}
+				}*/
 				?><a rel="nofollow" class="submit add2basket" href="#" title="<?=GetMessage('ADD2BASKET')?>"><i class="icon pngicons"></i><?=GetMessage('CT_BCE_CATALOG_ADD')?></a><?
 				?><a rel="nofollow" class="inbasket" href="<?=$arParams['BASKET_URL']?>" title="<?=GetMessage('INBASKET_TITLE')?>"><i class="icon pngicons"></i><?=GetMessage('INBASKET')?></a><?
 				?><a rel="nofollow" class="go2basket" href="<?=$arParams['BASKET_URL']?>"><?=GetMessage('INBASKET_TITLE')?></a><?
@@ -467,31 +442,11 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 		// SHARE
 		if($arParams['USE_SHARE']=='Y')
 		{
-			?><div class="share"><?
-				/*?><span class="b-share"><a class="email2friend b-share__handle b-share__link b-share-btn__vkontakte" href="#email2friend" title="<?=GetMessage('EMAIL2FRIEND')?>"><i class="b-share-icon icon pngicons"></i></a></span><?*/
-				?><span id="detailYaShare_<?=$arResult['ID']?>"></span><?
-				?><script type="text/javascript">
-				new Ya.share({
-					link: 'http://<?=$_SERVER['HTTP_HOST']?><?=$arResult['DETAIL_PAGE_URL']?>',
-					title: '<?=CUtil::JSEscape($arResult['TITLE'])?>',
-					<?if(isset($arResult['PREVIEW_TEXT']) && $arResult['PREVIEW_TEXT']!=''):?>description: '<?=CUtil::JSEscape($arResult['PREVIEW_TEXT'])?>',<?endif;?>
-					<?if(isset($arResult['FIRST_PIC'])):?>image: 'http://<?=$_SERVER['HTTP_HOST']?><?=$arResult['FIRST_PIC']['RESIZE']['src']?>',<?endif;?>
-					element: 'detailYaShare_<?=$arResult['ID']?>',
-					elementStyle: {
-						'type': 'button',
-						'border': false,
-						'text': '<?=GetMessage('YSHARE')?>',
-						'quickServices': ['yaru','vkontakte','facebook','twitter','odnoklassniki']
-					},
-					popupStyle: {
-						blocks: {
-							'<?=GetMessage('YSHARE2')?>': ['yaru','vkontakte','facebook','twitter','odnoklassniki','gplus','liveinternet','lj','moikrug','moimir','myspace']
-						},
-						copyPasteField: false
-					}
-				});
-				</script><?
-			?></div><?
+			?><div class="share">
+		<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+		<div class="yashare-auto-init" data-yashareImage="https://second24.ru<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" data-yashareDescription="<?=$arResult["PREVIEW_TEXT"]?>" data-yashareTitle="<?=$arResult["NAME"]?>" data-yashareLink="https://second24.ru<?=$arResult["DETAIL_PAGE_URL"]?>" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter"></div>
+		</div>
+		</div><?
 		}
 		// PREVIEW TEXT
 		if($arParams['SHOW_PREVIEW_TEXT']=='Y' && $arResult['PREVIEW_TEXT']!='')
@@ -504,7 +459,7 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 				}
 			?></div><?
 		}
-	?></div><?
+?></div><?
 ?></div><?
 ?><script>
 	BX.message({
