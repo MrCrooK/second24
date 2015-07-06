@@ -9,7 +9,6 @@ else{
 }
 echo '<link href="'.SITE_DIR.'nasvyazi/style.css?'.randString(10,array('1234567890')).'" type="text/css" rel="stylesheet" />';
 ?><div class="nasvyazi">
-	<div class="block left">
 <p>
 <a href="/about/f-a-q.php">Посетить центр поддержки</a>
 </p>
@@ -22,11 +21,6 @@ echo '<link href="'.SITE_DIR.'nasvyazi/style.css?'.randString(10,array('12345678
 Написать нам<br>
 <a href="mailto:help@second24.ru">help@second24.ru</a><br>
 </p>
-
-	</div>
-	<div class="block right">
-
-	</div>
 </div>
 <?if(!$IS_AJAX):?>
 <?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');?>

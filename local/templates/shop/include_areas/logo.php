@@ -1,0 +1,1 @@
+<img alt="Second24.RU" src="/local/templates/proopt/img/logo.jpg" title="OptPro">

@@ -39,10 +39,8 @@ $APPLICATION->SetTitle("Корзина");
 			5 => "PRICE",
 			6 => "QUANTITY",
 			7 => "SUM",
-			8 => "PROPERTY_CML2_ARTICLE",
-			9 => "PROPERTY_YEAR",
-			10 => "PROPERTY_OS",
-			11 => "PROPERTY_WEIGHT",
+			8 => "PROPERTY_RAZMER_ROSSIYSKIY",
+			9 => "PROPERTY_CML2_ARTICLE",
 		),
 		"PATH_TO_ORDER" => "/personal/order/make/",
 		"HIDE_COUPON" => "N",
@@ -59,7 +57,9 @@ $APPLICATION->SetTitle("Корзина");
 		),
 		"PROP_ARTICLE" => "CML2_ARTICLE",
 		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
-		"AJAX_MODE" => "Y"
+		"AJAX_MODE" => "Y",
+		"ACCESSORIES_IBLOCK" => "-",
+		"PROP_ACCESSORIES" => "-"
 	),
 	false
 );?>
