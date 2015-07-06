@@ -155,7 +155,7 @@ $(document).ready(function(){
     var scale = 515/$('.big_photo').height()*2;
 
 
-    $(".zoom_el img").css({left: '-'+Xinner*835+'px', top: '-'+Yinner*835*scale+'px', });
+    $(".zoom_el img").css({left: '-'+Xinner*835+'px', top: '-'+Yinner*3000+'px', });
   });
 /* Конец Фото в быстром просмотре */
 
