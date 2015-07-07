@@ -1,2 +1,2 @@
-﻿User-agent: *
-Disallow: / # блокирует доступ ко всему сайту
+User-agent: *
+Disallow: /

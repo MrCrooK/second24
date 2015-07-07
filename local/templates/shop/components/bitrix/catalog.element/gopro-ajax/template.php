@@ -74,52 +74,45 @@ $img=$arResult['NO_PHOTO']['src'];
 <span class="newprice"><?=$arResult['MIN_PRICE']['PRINT_VALUE']?></span>
 <?}?>
 </div>
-
-<div class="size-chooser__help">
-	<span class="size-chooser"><?=$arResult["PROPERTIES"]["RAZMER"]["VALUE"]?></span>
-	<div class="size-chooser__system">
-		<div class="size-chooser__system-select" data-form-widget="sizesystem">
-			<div class="select" data-form-control="sizesystem">
-				<span class="button">
-					<span class="button__title">Российский размер (RUS)</span>
-				</span>
-				<ul class="dropdown">
-					<li class="select__item select__item_current" data-option-value="Российский размер (RUS)"  data-size="<?=$arResult["PROPERTIES"]["RAZMER"]["VALUE"]?>">
-						<span class="select__item-label">Российский размер (RUS)</span>
-						<i class="select__tick"></i>
-					</li>
-					<li class="select__item" data-option-value="Размер производителя (EUR)"  data-size="<?=$arResult["PROPERTIES"]["SIZE_EUR"]["VALUE"]?>">
-						<span class="select__item-label">Размер производителя (EUR)</span>
-						<i class="select__tick"></i>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div> 
-	<a class="size-chooser__table-link js-defined-table" target="_blank" href="javascript:void()">Таблица размеров</a>
-</div>
-
 <?
 		// ADD2BASKET
 		?><noindex><div class="buy clearfix"><?
-			?><form class="add2basketform js-buyform<?=$arResult['ID']?> js-synchro<?if(!$PRODUCT['CAN_BUY']):?> cantbuy<?endif;?> clearfix" name="add2basketform"><?
+			?><form class="add2basketform js-buyform<?=$arResult['ID']?> js-synchro<?if(!$PRODUCT['CAN_BUY']):?> cantbuy<?endif;?> clearfix " name="add2basketform"><?//in
 				?><input type="hidden" name="<?=$arParams['ACTION_VARIABLE']?>" value="ADD2BASKET"><?
-				?><input type="hidden" name="<?=$arParams['PRODUCT_ID_VARIABLE']?>" class="js-add2basketpid" value="<?=$PRODUCT['ID']?>"><?
+				?><input type="hidden" name="<?=$arParams['PRODUCT_ID_VARIABLE']?>" class="js-add2basketpid" value="<?=$PRODUCT['ID']?>"><?/*
+				if($arParams['USE_PRODUCT_QUANTITY'])
+				{
+					?><span class="quantitytitle"><?=GetMessage('CT_BCE_QUANTITY')?>   </span><?
+					?><span class="quantity"><?
+						?><a class="minus js-minus">-</a><?
+						?><input type="text" class="js-quantity" name="<?=$arParams['PRODUCT_QUANTITY_VARIABLE']?>" value="<?=$PRODUCT['CATALOG_MEASURE_RATIO']?>" data-ratio="<?=$PRODUCT['CATALOG_MEASURE_RATIO']?>"><?
+						if($arParams['OFF_MEASURE_RATION']!='Y') {
+							?><span class="js-measurename"><?=$PRODUCT['CATALOG_MEASURE_NAME']?></span><?
+						}
+						?><a class="plus js-plus">+</a><?
+					?></span><?
+				}*/
 				?><a rel="nofollow" class="submit add2basket" href="#" title="<?=GetMessage('ADD2BASKET')?>"><i class="icon pngicons"></i><?=GetMessage('CT_BCE_CATALOG_ADD')?></a><?
 				?><a rel="nofollow" class="inbasket" href="<?=$arParams['BASKET_URL']?>" title="<?=GetMessage('INBASKET_TITLE')?>"><i class="icon pngicons"></i><?=GetMessage('INBASKET')?></a><?
 				?><a rel="nofollow" class="go2basket" href="<?=$arParams['BASKET_URL']?>"><?=GetMessage('INBASKET_TITLE')?></a><?
 				?><a rel="nofollow" class="buy1click detail fancyajax fancybox.ajax" href="<?=SITE_DIR?>buy1click/" title="<?=GetMessage('BUY1CLICK')?>"><?=GetMessage('BUY1CLICK')?></a><?
+				/*
+				if($PRODUCT['CATALOG_SUBSCRIPTION']=='Y')
+				{
+					?><a rel="nofollow" class="btn btn1 product2subscribe" href="#" title="<?=GetMessage('SUBSCRIBE_PROD_TITILE')?>"><?=GetMessage('SUBSCRIBE_PROD')?></a><?
+				}
+				*/
 				?><input type="submit" name="submit" class="noned" value="" /><?
 			?></form><?
-		?></div></noindex>
-
+		?></div></noindex><?
+?>
 <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
 <div class="yashare-auto-init" data-yashareImage="https://second24.ru<?=$img?>" data-yashareDescription="<?=$arResult["PREVIEW_TEXT"]?>" data-yashareTitle="<?=$arResult["NAME"]?>" data-yashareLink="https://second24.ru<?=$arResult["DETAIL_PAGE_URL"]?>" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter"></div>
 </div>
 
 
 <div class="detail-text" style="border-top: 5px solid #eee; padding: 15px;margin-bottom: 61px;">
-<?=$arResult['PREVIEW_TEXT']?>
+<?=$arResult['DETAIL_TEXT']?>
 <table class="groupedprops"><tbody>
 <?foreach($arResult["DISPLAY_PROPERTIES"] as $k => $v) {echo '<tr><td><div class="line"><span>'.$v["NAME"].'</span></div></td><td><div class="val">'.$v["VALUE"].'</div></td></tr>';}?>
 </tbody></table>
@@ -155,7 +148,7 @@ $(document).ready(function(){
     var scale = 515/$('.big_photo').height()*2;
 
 
-    $(".zoom_el img").css({left: '-'+Xinner*835+'px', top: '-'+Yinner*3000+'px', });
+    $(".zoom_el img").css({left: '-'+Xinner*835+'px', top: '-'+Yinner*2000+'px', });
   });
 /* Конец Фото в быстром просмотре */
 
